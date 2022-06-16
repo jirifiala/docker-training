@@ -18,3 +18,7 @@ If you want to learn more about creating good readme files then refer the follow
 - [ASP.NET Core](https://github.com/aspnet/Home)
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
 - [Chakra Core](https://github.com/Microsoft/ChakraCore)
+
+```docker build -t northwindstore-dev -f .\NorthwindStore.App\Dockerfile .```
+```docker-compose -f docker-compose.yml -f docker-compose.override.yml --project-name northwindstore up --build --force-recreate```
+```docker run --rm -e "ConnectionStrings__DB=Data Source=tcp:northwindstore.db,1433; Initial Catalog=Northwind; User ID=sa; Password=DevPass_1" --network northwindstore-dev northwindstoretestsintegrationtests```
